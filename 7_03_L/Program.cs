@@ -1,4 +1,6 @@
-﻿Stack<int> st = new Stack<int>();
+﻿using _7_03_L;
+
+/*Stack<int> st = new Stack<int>();
 for(int i = 0; i < 10; i++)
 {
     st.Push(i); 
@@ -24,5 +26,25 @@ if (ok)
 else
 {
     Console.WriteLine("Pop failed. Stack empty");
+}*/
+
+MyStack ms = new MyStack();
+Random rnd  = new Random();
+
+while(true)
+{
+	try
+	{
+		ms.Push(rnd.Next(1000));
+	}
+	catch (StackFullException e)
+	{
+		Console.WriteLine(e.Message);
+		throw;
+	}
 }
-st.
+
+while(!ms.Empty)
+{
+	Console.WriteLine(ms.Pop());
+}
